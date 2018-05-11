@@ -1,0 +1,32 @@
+﻿{
+  "formRoles": {
+    "rules": {
+      "Id": {
+        "required": true
+      },
+      "Nombre": {
+        "required": true
+      },
+      "Descripcion": {
+        "required": true
+      },
+      "Permisos": {
+        "required": true
+      }
+    },
+    "messages": {
+      "Id": {
+        "required": "Por favor especifique el id"
+      },
+      "Nombre": {
+        "required": "Por favor especifique el nombre"
+      },
+      "Descripcion": {
+        "required": "Por favor especifique la descripcion"
+      },
+      "Permisos": {
+        "required": "Por favor especifique los permisos"
+      }
+    }
+  }
+}

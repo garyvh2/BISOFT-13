@@ -1,0 +1,35 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+@using System.Net.Http;
+@using Cliente.Lib.Requester;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/CoreScreen/ListaTarjetas/ListaTarjetas.css">
+<script src="~/Views/CoreScreen/ListaTarjetas/ListaTarjetas.js"></script>
+
+@{
+    Usuario user = (Usuario)HttpContext.Current.Session["current_user"];
+}
+<div class="pricing-section bg-10">
+    @Html.CtrlTarjetas(Current_User: user)
+</div>
+
+
+<script id="pago" type="text/html">
+    <form id="RecargarTarjetaForm" class="row mb-3" validator="@Url.Content("~/Views/CoreScreen/ListaTarjetas/ListaTarjetas.json")">
+        <div class="col-lg-12">
+            <div class="bs-component">
+                @Html.CtrlInput("Saldo", "Monto a recargar", CtrlInputTypes.NUMBER, Min: "1")
+                @Html.CtrlInput("Codigo", "", CtrlInputTypes.TEXT, Disabled: "", Bootstrap_Clases: "d-none")
+            </div>
+        </div>
+    </form>
+    @Html.CtrlPayment()
+</script>

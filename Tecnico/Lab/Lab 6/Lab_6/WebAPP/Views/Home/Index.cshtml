@@ -1,0 +1,57 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBox;
+
+<script src="~/Scripts/Views/PedidosView.js"></script>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col" align="right">
+            <div class="form-group">
+                @Html.CtrlInput("Text", "Text", CtrlInputTypes.TEXT, Placeholder: "Text something")
+                @Html.CtrlInput("TextSm", "Text Small", CtrlInputTypes.TEXT, Bootstrap_Clases: "form-control-sm", Placeholder: "Text smol")
+                @Html.CtrlInput("TextLg", "Text Large", CtrlInputTypes.TEXT, Bootstrap_Clases: "form-control-lg", Placeholder: "Text Big Smoke")
+                @Html.CtrlInput("Disabled", "Disabled", CtrlInputTypes.TEXT, Disabled: "")
+                @Html.CtrlInput("Number", "Number", CtrlInputTypes.NUMBER)
+                @Html.CtrlInput("Date", "Date", CtrlInputTypes.DATE)
+                @Html.CtrlInput("Password", "Password", CtrlInputTypes.PASSWORD, Bootstrap_Clases: "form-control-sm")
+            </div>
+        </div>
+        <div class="col" align="left">
+            <div class="form-group">
+                @Html.CtrlComboBox("ComboBox", "ComboBox", new List<CtrlOptionModel>()
+                    {
+                    new CtrlOptionModel () { Value = "test1", Text = "Test Option 1"},
+                    new CtrlOptionModel () { Value = "test2", Text = "Test Option 2"},
+                    new CtrlOptionModel () { Value = "test2", Text = "Test Option 3"}
+                    })
+
+                @Html.CtrlComboBox("ComboBoxMulti", "ComboBox Multiple", new List<CtrlOptionModel>()
+                    {
+                    new CtrlOptionModel () { Value = "test1", Text = "Test Option 1"},
+                    new CtrlOptionModel () { Value = "test2", Text = "Test Option 2"},
+                    new CtrlOptionModel () { Value = "test2", Text = "Test Option 3"}
+                    }, Multiple: "")
+
+                @Html.CtrlCheckRadio("Checkbox1", "Checkbox 1", "chk1")
+                @Html.CtrlCheckRadio("Checkbox2", "Checkbox 2", "chk2", Checked: "")
+
+                @Html.CtrlCheckRadio("Radio1", "Radio Button 1", "radio", CtrlCheckRadioTypes.RADIO)
+                @Html.CtrlCheckRadio("Radio2", "Radio Button 2", "radio", CtrlCheckRadioTypes.RADIO)
+                @Html.CtrlCheckRadio("Radio3", "Radio Button 3", "radio", CtrlCheckRadioTypes.RADIO)
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.CtrlButton("Primary", "Primary Button")
+@Html.CtrlButton("Secondary", "Secondary Button", Bootstrap_Classes: "btn-secondary")
+@Html.CtrlButton("Sucess", "Sucess Button Disabled", Bootstrap_Classes: "btn-success", Disabled: "")
+@Html.CtrlButton("Info", "Info Button", Bootstrap_Classes: "btn-info")
+@Html.CtrlButton("Warning", "Warning Button Disabled", Bootstrap_Classes: "btn-warning", Disabled: "")
+@Html.CtrlButton("Danger", "Danger Button", Bootstrap_Classes: "btn-danger")
+
+
+

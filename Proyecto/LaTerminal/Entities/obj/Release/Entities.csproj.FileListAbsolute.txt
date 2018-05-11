@@ -1,0 +1,15 @@
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\Entities.dll
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\Entities.pdb
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\obj\Release\Entities.csproj.CoreCompileInputs.cache
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\obj\Release\Entities.dll
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\obj\Release\Entities.pdb
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\obj\Release\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\Microsoft.IdentityModel.Logging.dll
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\Newtonsoft.Json.dll
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\Twilio.dll
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\Newtonsoft.Json.xml
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Entities\bin\Release\Twilio.xml

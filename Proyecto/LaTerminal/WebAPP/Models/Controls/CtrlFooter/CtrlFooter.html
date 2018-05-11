@@ -1,0 +1,467 @@
+﻿<style>
+    /* ======== Footer ======== */
+    footer {
+        top: 20vh;
+        padding: 0 0 85px;
+        position: relative;
+        width: 100vw;
+        height: auto;
+        background: #333333;
+        box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.12), 0 -1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    #hs-rights {
+        background: #1F1F1F;
+        height: 75px;
+        width: auto;
+        min-width: 100vw;
+        position: absolute;
+        bottom: 0;
+    }
+
+        #hs-rights #hs-copyright {
+            width: auto;
+            color: #AEA995;
+            margin-left: 100px;
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            transform: translateY(-50%);
+            top: 50%;
+            float: left;
+        }
+
+            #hs-rights #hs-copyright p {
+                margin: 0;
+            }
+
+        #hs-rights #hs-payment {
+            width: auto;
+            color: #AEA995;
+            margin-right: 100px;
+            position: relative;
+            transform: translateY(-50%);
+            top: 50%;
+            float: right;
+        }
+
+            #hs-rights #hs-payment ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+                #hs-rights #hs-payment ul li {
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+
+    #hs-social {
+        width: 100vw;
+        height: 75px;
+        background: #FF0048;
+        position: relative;
+    }
+
+        #hs-social #hs-social-hearth {
+            box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.12), 0 -1px 2px rgba(0, 0, 0, 0.24);
+            height: 90px;
+            width: 90px;
+            background: #1F1F1F;
+            color: #FF4355;
+            border-radius: 50px 50px 0 0;
+            position: absolute;
+            margin: 0 auto;
+            transform: translateY(-50%) translateX(-50%);
+            left: 50%;
+            top: 40%;
+        }
+
+            #hs-social #hs-social-hearth div {
+                margin: 0;
+                height: 50px;
+                width: 50px;
+                position: relative;
+                transform: translateY(-50%) translateX(-50%);
+                left: 50%;
+                top: 60%;
+            }
+
+            #hs-social #hs-social-hearth i::before {
+                position: relative;
+                vertical-align: middle;
+            }
+
+        #hs-social .hs-social-buttons {
+            width: 50%;
+            display: inline-block;
+            margin: 0;
+            position: relative;
+            transform: translateY(-50%);
+            top: 50%;
+        }
+
+            #hs-social .hs-social-buttons ul {
+                width: 100%;
+                list-style: none;
+                padding: 0;
+                margin: 0 auto;
+            }
+
+                #hs-social .hs-social-buttons ul li {
+                    color: #fff;
+                    display: inline-block;
+                }
+
+    .hs-social-right {
+        float: right;
+        padding-left: 50px;
+    }
+
+        .hs-social-right ul {
+            text-align: left;
+        }
+
+            .hs-social-right ul li {
+                margin: 0 3vw;
+            }
+
+    .hs-social-left {
+        float: left;
+        padding-right: 50px;
+    }
+
+        .hs-social-left ul {
+            text-align: right;
+        }
+
+            .hs-social-left ul li {
+                margin: 0 3vw;
+            }
+
+    #hs-contacts ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #hs-contacts .title {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.18);
+        width: 55%;
+        margin: 20px auto;
+    }
+
+        #hs-contacts .title h1 {
+            color: #A59D81;
+            display: block;
+            margin: 0 auto;
+            padding: 0 0 15px;
+            font-size: 4vh !important;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+    #hs-contact {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 20px;
+        border-radius: 3px;
+        background: rgba(0, 0, 0, 0.18);
+        height: 200px;
+        width: 300px;
+    }
+
+        #hs-contact #hs-contact-content h1 {
+            color: #A59D81;
+            padding: 15px;
+            margin: 0;
+            font-weight: 900;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            position: relative;
+            border-bottom: 3px solid rgba(139, 144, 157, 0.18);
+        }
+
+        #hs-contact #hs-contact-content:after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 2px;
+            background: #A59D81;
+            left: 35%;
+            bottom: 0;
+        }
+
+        #hs-contact #hs-contact-content span {
+            color: #989276;
+            font-weight: bolder;
+        }
+
+        #hs-contact #hs-contact-content p {
+            color: #9CA0A9;
+            display: block;
+            margin: 5px auto;
+            text-align: center;
+            width: 250px;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+
+    .pulsate {
+        -webkit-animation: pulsate 1.8s ease-out;
+        -webkit-animation-iteration-count: infinite;
+        animation: pulsate 1.8s ease-out;
+        animation-iteration-count: infinite;
+        opacity: 0.8;
+        transform-origin: center;
+    }
+
+    @keyframes pulsate {
+        0% {
+            transform: scale(0.9);
+        }
+
+        50% {
+            transform: scale(1.1);
+        }
+
+        60% {
+            transform: scale(1);
+        }
+
+        75% {
+            transform: scale(1.1);
+        }
+
+        100% {
+            transform: scale(0.9);
+        }
+    }
+
+
+    /* ======== ICONS ======== */
+    .fa-cc-visa:hover {
+        transition: .1s ease-in-out;
+        color: #212564;
+    }
+
+    .fa-cc-mastercard:hover {
+        transition: .1s ease-in-out;
+        color: #faa71a;
+    }
+
+    .fa-cc-amex:hover {
+        transition: .1s ease-in-out;
+        color: #0093DD;
+    }
+
+    .fa-cc-paypal:hover {
+        transition: .1s ease-in-out;
+        color: #01308A;
+    }
+
+    .fa-facebook-square:hover {
+        transition: .1s ease-in-out;
+        color: #4360B5;
+    }
+
+    .fa-twitter-square:hover {
+        transition: .1s ease-in-out;
+        color: #00AAE5;
+    }
+
+    .fa-github-square:hover {
+        transition: .1s ease-in-out;
+        color: #000000;
+    }
+
+    .fa-linkedin:hover {
+        transition: .1s ease-in-out;
+        color: #0071B6;
+    }
+
+
+    @media (orientation: landscape) and (max-width: 750px) and (max-height: 420px) {
+
+        footer {
+            padding: 0 0 100px;
+        }
+
+        #hs-rights {
+            height: auto;
+        }
+
+            #hs-rights #hs-copyright {
+                display: block;
+                width: 80vw;
+                margin: 15px auto;
+                top: initial;
+                transform: none;
+                float: none;
+            }
+
+                #hs-rights #hs-copyright p {
+                    text-align: center;
+                }
+
+            #hs-rights #hs-payment {
+                text-align: center;
+                display: block;
+                width: 80vw;
+                margin: 15px auto;
+                top: initial;
+                transform: none;
+                float: none;
+            }
+    }
+
+    @media (max-width: 1024px) {
+        footer {
+            padding: 0 0 160px;
+        }
+
+
+        #hs-rights {
+            height: auto;
+        }
+
+            #hs-rights #hs-copyright {
+                display: block;
+                width: 80vw;
+                margin: 15px auto;
+                top: initial;
+                transform: none;
+                float: none;
+            }
+
+                #hs-rights #hs-copyright p {
+                    text-align: center;
+                }
+
+            #hs-rights #hs-payment {
+                text-align: center;
+                display: block;
+                width: 80vw;
+                margin: 15px auto;
+                top: initial;
+                transform: none;
+                float: none;
+            }
+    }
+</style>
+<footer>
+    <div id="hs-social">
+        <div id="hs-social-hearth">
+            <div>
+                <i class="fas fa-heart fa-3x pulsate"></i>
+            </div>
+        </div>
+        <div class="hs-social-buttons hs-social-left">
+            <ul>
+                <li>
+                    <i class="fab fa-facebook-square fa-3x"></i>
+                </li>
+                <li>
+                    <i class="fab fa-twitter-square fa-3x"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="hs-social-buttons hs-social-right">
+            <ul>
+                <li>
+                    <i class="fab fa-github-square fa-3x"></i>
+                </li>
+                <li>
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="hs-contacts">
+        <div class="title" align="center">
+            <h1>Contacto</h1>
+        </div>
+        <div>
+            <ul align="center">
+                <li id="hs-contact">
+                    <div id="hs-contact-content">
+                        <h1>Norte</h1>
+                        <p>
+                            <span>Telefono:</span> +506 7020-0902
+                        </p>
+                        <p>
+                            <span>Ubicacion:</span> Barrio Aranjuez
+                        </p>
+                        <p>
+                            <span>Correo:</span> oeste@laterminal.co.cr
+                        </p>
+                    </div>
+                </li>
+                <li id="hs-contact">
+                    <div id="hs-contact-content">
+                        <h1>Este</h1>
+                        <p>
+                            <span>Telefono:</span> +506 7020-0902
+                        </p>
+                        <p>
+                            <span>Ubicacion:</span> Costado de Plaza Gonzales Viquez
+                        </p>
+                        <p>
+                            <span>Correo:</span> este@laterminal.co.cr
+                        </p>
+                    </div>
+                </li>
+                <li id="hs-contact">
+                    <div id="hs-contact-content">
+                        <h1>Oeste</h1>
+                        <p>
+                            <span>Telefono:</span> +506 7020-0902
+                        </p>
+                        <p>
+                            <span>Ubicacion:</span> Antigua Municipalidad de San Jose
+                        </p>
+                        <p>
+                            <span>Correo:</span> oeste@laterminal.co.cr
+                        </p>
+                    </div>
+                </li>
+                <li id="hs-contact">
+                    <div id="hs-contact-content">
+                        <h1>Sur</h1>
+                        <p>
+                            <span>Telefono:</span> +506 7020-0902
+                        </p>
+                        <p>
+                            <span>Ubicacion:</span> Antigua Estacion de Trenes del Pacifico
+                        </p>
+                        <p>
+                            <span>Correo:</span> sur@laterminal.co.cr
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="hs-rights">
+        <div id="hs-copyright">
+            <p>Copyright © 2018 La Terminal All Rights Reserved. Powered by Quantum Coding.</p>
+        </div>
+        <div id="hs-payment">
+            <ul>
+                <li>
+                    <i class="fab fa-cc-visa fa-3x"></i>
+                </li>
+                <li>
+                    <i class="fab fa-cc-mastercard fa-3x"></i>
+                </li>
+                <li>
+                    <i class="fab fa-cc-amex fa-3x"></i>
+                </li>
+                <li>
+                    <i class="fab fa-cc-paypal fa-3x"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>

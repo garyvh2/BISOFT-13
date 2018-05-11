@@ -1,0 +1,4 @@
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\SandBox\obj\Debug\netcoreapp2.0\SandBox.csprojResolveAssemblyReference.cache
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\SandBox\obj\Debug\netcoreapp2.0\SandBox.csproj.CoreCompileInputs.cache
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\SandBox\obj\Debug\netcoreapp2.0\SandBox.AssemblyInfoInputs.cache
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\SandBox\obj\Debug\netcoreapp2.0\SandBox.AssemblyInfo.cs

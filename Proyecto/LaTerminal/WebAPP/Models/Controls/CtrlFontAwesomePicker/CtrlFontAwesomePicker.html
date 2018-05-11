@@ -1,0 +1,53 @@
+﻿<script>
+    $(document).ready(function () {
+        $("#-#Id-").iconpicker({
+            defaultValue: true, // use this value as the current item if input or element value is empty
+            hideOnSelect: true,
+            placement: 'top',
+            templates: {
+                popover: '<div class="iconpicker-popover popover"><div class="arrow"></div>' + '<div class="popover-title"></div><div class="popover-content"></div></div>',
+                footer: '<div class="popover-footer"></div>',
+                buttons: '<button class="iconpicker-btn iconpicker-btn-cancel btn btn-default btn-sm">Cancel</button>' + ' <button class="iconpicker-btn iconpicker-btn-accept btn btn-primary btn-sm">Accept</button>',
+                search: '<input type="search" class="form-control iconpicker-search" placeholder="Type to filter" />',
+                iconpicker: '<div class="iconpicker"><div class="iconpicker-items"></div></div>',
+                iconpickerItem: '<a role="button" class="iconpicker-item"><i></i></a>'
+            }
+        });
+    })
+</script>
+<label for="-#Id-">-#Title-</label>
+<style>
+    .has-error .form-control {
+        border-color: #a94442;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    }
+    .has-error .input-group-addon {
+        color: #a94442;
+        background-color: #f2dede;
+        border-color: #a94442;
+    }
+    .fade.in {
+        opacity: 1;
+    }
+    .input-group-text {
+        cursor: pointer;
+        color: #fff;
+        background-color: #333333;
+        border: 1px solid #212529;
+    }
+</style>
+<div class="input-group">
+    <input id="-#Id-"
+           name="-#Id-"
+           -#Disabled-
+           data-placement="bottomRight"
+           class="ltl_input form-control icp icp-auto"
+           value="-#Value-"
+           type="text"
+           ColumnDataName="-#ColumnDataName-"
+           placeholder="-#Placeholder-" />
+    <div class="input-group-append">
+        <span class="input-group-text input-group-addon"></span>
+    </div>
+</div>

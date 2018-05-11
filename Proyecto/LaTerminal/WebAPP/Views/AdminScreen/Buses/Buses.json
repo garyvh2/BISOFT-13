@@ -1,0 +1,57 @@
+﻿{
+  "formBuses": {
+    "rules": {
+      "NUMERO_PLACA": {
+        "required": true
+      },
+      "ID_EMPRESA_BUS": {
+        "required": true
+      },
+      "NUMERO_UNIDAD": {
+        "required": true
+      },
+      "MARCA": {
+        "required": true
+      },
+      "MODELO": {
+        "required": true
+      },
+      "CAPACIDAD": {
+        "required": true
+      },
+      "ESPACIOS_DISCACITADOS": {
+        "required": true
+      },
+      "ID_CHOFER": {
+        "required":  true
+      }
+    },
+    "messages": {
+      "NUMERO_PLACA": {
+        "required": "Por favor especifique el numero de placa del autobus"
+      },
+      "ID_EMPRESA_BUS": {
+        "required": "Por favor especifique a que empresa pertenece el autobus"
+      },
+      "NUMERO_UNIDAD": {
+        "required": "Por favor especifique el numero de unidad"
+      },
+      "MARCA": {
+        "required": "Por favor especifique la marca del autobus"
+      },
+      "MODELO": {
+        "required": "Por favor especifique el modelo del autobus"
+      },
+      "CAPACIDAD": {
+        "required": "Por favor especfique la capacidad del autobus"
+      },
+      "ESPACIOS_DISCACITADOS": {
+        "required": "Por favor especifique la cantidad de espacios para personas discapacitadas con las que cuenta el autobus"
+      },
+      "ID_CHOFER": {
+        "required": "Por favor especfique el chofer del bus"
+      }
+    }
+  }
+
+}

@@ -1,0 +1,10 @@
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\bin\Debug\Excepciones.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\bin\Debug\Excepciones.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\bin\Debug\AccesoDatos.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\bin\Debug\Entidades.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\bin\Debug\AccesoDatos.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\bin\Debug\Entidades.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\obj\Debug\Excepciones.csprojResolveAssemblyReference.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\obj\Debug\Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\obj\Debug\Excepciones.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Excepciones\obj\Debug\Excepciones.pdb

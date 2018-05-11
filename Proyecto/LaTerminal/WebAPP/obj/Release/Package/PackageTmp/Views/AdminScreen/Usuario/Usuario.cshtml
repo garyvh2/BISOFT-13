@@ -1,0 +1,76 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Usuario/Usuario.css">
+<script src="~/Views/AdminScreen/Usuario/Usuario.js"></script>
+
+@Html.CtrlTable(viewName: "UsuarioHandler", id: "tblUsuarios", title: "Usuarios",
+                    columnsTitle: "Id,Nombre Completo,Rol,Genero,Telefono,Correo,Empresa de buses,Terminal",
+                    ColumnsDataName: "Identificacion,Nombre_Completo,Rol_Name,Genero,Telefono,Correo,Empresa_Bus_Name,Terminal_Name", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y creacion de usuarios
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "UsuarioHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "UsuarioHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="formUsuarios" class="row" validator="@Url.Content("~/Views/AdminScreen/Usuario/Usuario.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Identificacion", "Identificacion", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("PNombre", "Primer Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("SNombre", "Segundo Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("PApellido", "Primer Apellido", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("SApellido", "Segundo Apellido", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Fecha_Nac", "Fecha de Nacimiento", CtrlInputTypes.DATE, Tooltip: "Debe ser mayor a 18 años")
+                    <br>
+                    @Html.CtrlInput("Correo", "Correo electrónico", CtrlInputTypes.TEXT, Tooltip: "Debe seguir el formato nombre@dominio.com")
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @{var Genero = Html.CtrlComboBox<ListValue>("Genero", "Genero", "genero");}
+                    @Genero
+                    <br>
+                    @{var Rol = Html.CtrlComboBox<Rol>("Id_Rol", "Rol que posee", "", "rol", IdField: "Id", DescriptionField: "Nombre");}
+                    @Rol
+                    <br>
+                    @{var Empresa_Bus = Html.CtrlComboBox<Empresa_Bus>("Id_Empresa_Bus", "Empresa De Buses En Que Labora", "", "empresa_bus", Default: true, Placeholder: false, IdField: "CEDULA_JUR", DescriptionField: "NOMBRE");}
+                    @Empresa_Bus
+                    <br>
+                    @{var Terminal = Html.CtrlComboBox<Terminal>("Id_Terminal", "Terminal En Que Labora", "", "terminal", Default: true, Placeholder: false, IdField: "CEDULA_JUR", DescriptionField: "NOMBRE");}
+                    @Terminal
+                    <br>
+                    @Html.CtrlInput("Telefono", "Número Telefónico", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlTextarea("Direccion", "Dirección", CtrlInputTypes.TEXT)
+                    @Html.CtrlTextarea("First_Time", "", CtrlInputTypes.TEXT, Bootstrap_Clases: "d-none")
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

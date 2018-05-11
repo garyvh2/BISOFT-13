@@ -1,0 +1,44 @@
+﻿{
+  "formSanciones": {
+    "rules": {
+      "Id_Empresa_Bus": {
+        "required": true
+      },
+      "Detalle": {
+        "required": true
+      },
+      "Fecha": {
+        "required": true
+      },
+      "Monto": {
+        "required": true
+      },
+      "Tipo": {
+        "required": true
+      },
+      "Estado": {
+        "required": true
+      }
+    },
+    "messages": {
+      "Id_Empresa_Bus": {
+        "required": "Por favor especifique la empresa de bus"
+      },
+      "Detalle": {
+        "required": "Por favor especifique el detalle"
+      },
+      "Fecha": {
+        "required": "Por favor especifique la fecha"
+      },
+      "Monto": {
+        "required": "Por favor especifique el monto"
+      },
+      "Tipo": {
+        "required": "Por favor especifique el tipo"
+      },
+      "Estado": {
+        "required": "Por favor especifique el estado"
+      }
+    }
+  }
+}

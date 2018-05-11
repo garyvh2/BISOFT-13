@@ -1,0 +1,14 @@
+﻿{
+  "formTarjetas": {
+    "rules": {
+      "NOMBRE": {
+        "required": true
+      }
+    },
+    "messages": {
+      "NOMBRE": {
+        "required": "Por favor especifique el nombre del requisito de operación a registrar"
+      }
+    }
+  }
+}

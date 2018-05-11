@@ -1,0 +1,110 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+@using System.Configuration;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/CoreScreen/Perfil/Perfil.css">
+<script src="~/Views/CoreScreen/Perfil/Perfil.js"></script>
+
+@{
+    Usuario user = (Usuario)HttpContext.Current.Session["current_user"];
+    string picture;
+    if (user.Foto == "" || user.Foto == null)
+    {
+        picture = "/Content/Imgs/profile_thumbnail.png";
+    }
+    else
+    {
+        picture = ConfigurationManager.AppSettings["API_BASE_URL"] + "image/user/" + user.Identificacion;
+    }
+}
+
+<div id="edit_user_photo" class="picture" style="background-image: url('@picture')"></div>
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Actualizar Perfil
+    </div>
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "UsuarioForm", Id: "btnActualizarPerfil", Title: "Actualizar", FunctionName: "put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="actualizarPerfil" class="row" validator="@Url.Content("~/Views/CoreScreen/Perfil/Perfil.json")">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                    @Html.CtrlInput("Identificacion", "Identificacion", CtrlInputTypes.TEXT, Disabled: "")
+                    <br>
+                    @{var Empresa_Bus = Html.CtrlComboBox<Empresa_Bus>("Id_Empresa_Bus", "Empresa De Buses En Que Labora", "", "empresa_bus", Default: false, IdField: "CEDULA_JUR", DescriptionField: "NOMBRE", Disabled: "");}
+                    @Empresa_Bus
+                    <br>
+                    @{var Terminal = Html.CtrlComboBox<Terminal>("Id_Terminal", "Terminal En Que Labora", "", "terminal", Default: false, IdField: "CEDULA_JUR", DescriptionField: "NOMBRE", Disabled: "");}
+                    @Terminal
+                    <br>
+                    @{var Rol = Html.CtrlComboBox<Rol>("Id_Rol", "Rol que posee", "", "rol", IdField: "Id", DescriptionField: "Nombre", Disabled: "");}
+                    @Rol
+                    <br>
+                    @Html.CtrlInput("PNombre", "Primer Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("SNombre", "Segundo Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("PApellido", "Primer Apellido", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("SApellido", "Segundo Apellido", CtrlInputTypes.TEXT)
+                    <br>
+                    @{var Genero = Html.CtrlComboBox<ListValue>("Genero", "Genero", "genero");}
+                    @Genero
+                    <br>
+                    @Html.CtrlInput("Fecha_Nac", "Fecha de Nacimiento", CtrlInputTypes.DATE)
+                    <br>
+                    @Html.CtrlInput("Telefono", "Número Telefónico", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlTextarea("Direccion", "Dirección", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlTextarea("First_Time", "", CtrlInputTypes.TEXT, Bootstrap_Clases: "d-none")
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Actualizar Clave
+    </div>
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "ClaveForm", Id: "btnActualizarClave", Title: "Actualizar", FunctionName: "put", CustomService: "'usuario/clave'", IncludeSession: true, Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="actualizarClave" class="row" validator="@Url.Content("~/Views/CoreScreen/Perfil/Perfil.json")">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                    @Html.CtrlInput("Clave_Actual", "Clave Actual", CtrlInputTypes.PASSWORD)
+                    <hr>
+                    @Html.CtrlInput("Clave", "Nueva Clave", CtrlInputTypes.PASSWORD, Tooltip: "Formato requerido<br>• De 8 a 16 caracteres<br>• Incluir 1 caracter minuscula<br>• Incluir 1 caracter mayuscula<br>• Incluir 1 numero")
+                    <br>
+                    @Html.CtrlInput("Clave_Rep", "Confirmar Clave", CtrlInputTypes.PASSWORD, Exclude: true)
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/html" id="pictureUpload">
+    @Html.CtrlImageUploader()
+</script>
+
+<link rel="stylesheet" href="~/Content/jquery.fileupload.css">
+<script src="~/Scripts/Libs/jquery.ui.widget.js"></script>
+<script src="~/Scripts/Libs/load-image.all.min.js"></script>
+<script src="~/Scripts/Libs/canvas-to-blob.min.js"></script>
+<script src="~/Scripts/Libs/jquery.iframe-transport.js"></script>
+<script src="~/Scripts/Libs/jquery.fileupload.js"></script>
+<script src="~/Scripts/Libs/jquery.fileupload-process.js"></script>
+<script src="~/Scripts/Libs/jquery.fileupload-image.js"></script>
+<script src="~/Scripts/Libs/jquery.fileupload-validate.js"></script>

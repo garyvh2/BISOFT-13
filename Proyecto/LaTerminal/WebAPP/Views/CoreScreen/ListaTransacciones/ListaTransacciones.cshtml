@@ -1,0 +1,18 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/CoreScreen/ListaTransacciones/ListaTransacciones.css">
+<script src="~/Views/CoreScreen/ListaTransacciones/ListaTransacciones.js"></script>
+
+
+@Html.CtrlTable(viewName: "TransaccionHandler", id: "tblTransaccion", title: "Mis Transacciones",
+                    columnsTitle: "Id,Detalle,Monto,Fecha,Terminal,Empresa de buses", 
+                    ColumnsDataName: "Id,Detalle,Monto,Fecha,Terminal_Name,Empresa_Bus_Name", FunctionName: "")

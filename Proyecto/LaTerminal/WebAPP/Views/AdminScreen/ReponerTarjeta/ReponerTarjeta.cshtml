@@ -1,0 +1,40 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Tarjeta/Tarjeta.css">
+<script src="~/Views/AdminScreen/Tarjeta/Tarjeta.js"></script>
+
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        <div class="row pull-right">
+            <div class="col-md-8">Reponer tarjeta</div>
+            <div class="col-md-4">
+                @Html.CtrlButton(viewName: "TarjetaHandler", Id: "btnReponer",
+                             Title: "Reponer", FunctionName: "Reponer", Bootstrap_Classes: "btn-primary")
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <form id="formTarjetas" class="row">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Codigo", "Codigo", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Tipo Reposicion", "tipoReposicion", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Saldo", "Saldo", CtrlInputTypes.NUMBER)
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

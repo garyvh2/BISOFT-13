@@ -1,0 +1,96 @@
+﻿{
+  "formUsuarios": {
+    "rules": {
+      "Identificacion": {
+        "required": true
+      },
+      "PNombre": {
+        "required": true
+      },
+      "PApellido": {
+        "required": true
+      },
+      "Fecha_Nac": {
+        "required": true,
+        "minAge": 18
+      },
+      "Correo": {
+        "required": true,
+        "email": true
+      },
+      "Genero": {
+        "required": true
+      },
+      "Id_Rol": {
+        "required": true
+      },
+      "Telefono": {
+        "required": true
+      },
+      "Direccion": {
+        "required": true
+      }
+    },
+    "messages": {
+      "Identificacion": {
+        "required": "Por favor especifique la identificacion"
+      },
+      "PNombre": {
+        "required": "Por favor especifique el primer nombre"
+      },
+      "PApellido": {
+        "required": "Por favor especifique el primer apellido"
+      },
+      "Fecha_Nac": {
+        "required": "Por favor especifique una fecha de nacimiento",
+        "minAge": "Debe ser mayor a 18 años"
+      },
+      "Correo": {
+        "required": "Por favor especifique un correo electrónico",
+        "email": "El valor de correo electronico debe seguir el formato 'nombre@dominio.com'"
+      },
+      "Genero": {
+        "required": "Por favor especifique un genero"
+      },
+      "Id_Rol": {
+        "required": "Por favor especifique un rol"
+      },
+      "Telefono": {
+        "required": "Por favor especifique un numero telefonico"
+      },
+      "Direccion": {
+        "required": "Por favor especifique una direccion"
+      }
+    }
+  },
+  "CrearRolForm": {
+    "rules": {
+      "Id": {
+        "required": true
+      },
+      "Nombre": {
+        "required": true
+      },
+      "Descripcion": {
+        "required": true
+      },
+      "Permisos": {
+        "required": true
+      }
+    },
+    "messages": {
+      "Id": {
+        "required": "Por favor especifique el id"
+      },
+      "Nombre": {
+        "required": "Por favor especifique el nombre"
+      },
+      "Descripcion": {
+        "required": "Por favor especifique la descripcion"
+      },
+      "Permisos": {
+        "required": "Por favor especifique los permisos"
+      }
+    }
+  }
+}

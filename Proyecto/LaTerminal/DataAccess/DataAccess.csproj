@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E2A4F82-32E8-4209-99E7-5DF77734D433}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Braintree, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31b586f34d3e96c7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Braintree.4.1.1\lib\net452\Braintree.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Twilio, Version=5.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.11.0\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CRUD\ArchitectureComponents\AppExceptionCrudFactory.cs" />
+    <Compile Include="CRUD\ArchitectureComponents\AppMessagesCrudFactory.cs" />
+    <Compile Include="CRUD\ArchitectureComponents\ConfigurationItemCrudFactory.cs" />
+    <Compile Include="CRUD\ArchitectureComponents\CrudFactory.cs" />
+    <Compile Include="CRUD\ArchitectureComponents\ListValueCrudFactory.cs" />
+    <Compile Include="CRUD\ArchitectureComponents\NotificacionCrudFactory.cs" />
+    <Compile Include="CRUD\ArchitectureComponents\Persona_ClaveCrudFactory.cs" />
+    <Compile Include="CRUD\ArchitectureComponents\Usuario_LogsCrudFactory.cs" />
+    <Compile Include="CRUD\BusCrudFactory.cs" />
+    <Compile Include="CRUD\Empresa_BusCrudFactory.cs" />
+    <Compile Include="CRUD\EstacionamientoCrudFactory.cs" />
+    <Compile Include="CRUD\HorariosCrudFactory.cs" />
+    <Compile Include="CRUD\ParadaCrudFactory.cs" />
+    <Compile Include="CRUD\PermisoCrudFactory.cs" />
+    <Compile Include="CRUD\QuejaCrudFactory.cs" />
+    <Compile Include="CRUD\RequisitoBusCrudFactory.cs" />
+    <Compile Include="CRUD\RequisitosCrudFactory.cs" />
+    <Compile Include="CRUD\RolCrudFactory.cs" />
+    <Compile Include="CRUD\RutaCrudFactory.cs" />
+    <Compile Include="CRUD\SancionCrudFactory.cs" />
+    <Compile Include="CRUD\TarjetaCrudFactory.cs" />
+    <Compile Include="CRUD\TerminalCrudFactory.cs" />
+    <Compile Include="CRUD\TipoTarjetaCrudFactory.cs" />
+    <Compile Include="CRUD\TransactionComponents\CompradorCrudFactory.cs" />
+    <Compile Include="CRUD\TransactionComponents\FacturaCrudFactory.cs" />
+    <Compile Include="CRUD\TransactionComponents\Linea_DetalleCrudFactory.cs" />
+    <Compile Include="CRUD\TransactionComponents\TransaccionCrudFactory.cs" />
+    <Compile Include="CRUD\UsuarioCrudFactory.cs" />
+    <Compile Include="CRUD\ViajeCrudFactory.cs" />
+    <Compile Include="CRUD\ViajesTarjetasCrudFactory.cs" />
+    <Compile Include="DAO\SqlDao.cs" />
+    <Compile Include="DAO\SqlOperation.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\AppExceptionMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\AppMessageMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\BaseMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\ConfigurationItemMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\EntityMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\ListValueMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\NotificacionMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\Persona_ClaveMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\Usuario_LogsMapper.cs" />
+    <Compile Include="MAPPER\BusMapper.cs" />
+    <Compile Include="MAPPER\Empresa_BusMapper.cs" />
+    <Compile Include="MAPPER\EstacionamientoMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\IObjectMapper.cs" />
+    <Compile Include="MAPPER\ArchitectureComponents\ISqlStaments.cs" />
+    <Compile Include="MAPPER\HorariosMapper.cs" />
+    <Compile Include="MAPPER\ParadaMapper.cs" />
+    <Compile Include="MAPPER\PermisoMapper.cs" />
+    <Compile Include="MAPPER\QuejaMapper.cs" />
+    <Compile Include="MAPPER\RequisitoBusMapper.cs" />
+    <Compile Include="MAPPER\RequisitosMapper.cs" />
+    <Compile Include="MAPPER\RolMapper.cs" />
+    <Compile Include="MAPPER\RutaMapper.cs" />
+    <Compile Include="MAPPER\SancionMapper.cs" />
+    <Compile Include="MAPPER\TarjetaMapper.cs" />
+    <Compile Include="MAPPER\TerminalMapper.cs" />
+    <Compile Include="MAPPER\TipoTarjetaMapper.cs" />
+    <Compile Include="MAPPER\TransactionComponents\CompradorMapper.cs" />
+    <Compile Include="MAPPER\TransactionComponents\FacturaMapper.cs" />
+    <Compile Include="MAPPER\TransactionComponents\Linea_DetalleMapper.cs" />
+    <Compile Include="MAPPER\TransactionComponents\TransaccionMapper.cs" />
+    <Compile Include="MAPPER\UsuarioMapper.cs" />
+    <Compile Include="MAPPER\ViajeMapper.cs" />
+    <Compile Include="MAPPER\Viajes_TarjetasMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{87DBD346-1EA5-4C55-8B8B-A88233713C1D}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,190 @@
+﻿<style>
+    .component_container {
+        width: 100%;
+        display: block;
+    }
+
+    /* Container */
+    .link_container {
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: table;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+        .link_container > div {
+            display: none;
+            vertical-align: middle;
+            position: relative;
+            width: 100%;
+            height: 42px !important;
+        }
+
+            .link_container > div > * {
+                display: table-cell;
+                vertical-align: middle;
+                position: relative;
+            }
+
+        .link_container label {
+            width: 100%;
+        }
+
+        .link_container h4 {
+            font-size: 20px;
+        }
+    /* Selected Action */
+    #-#Id--link_action {
+        color: #FF0048;
+        font-weight: 900;
+    }
+    #-#Id--link_action:hover {
+        text-decoration: underline;
+    }
+        #link_action h4 {
+            margin: 0;
+        }
+
+
+    /* ICONS */
+    .link_icon {
+        width: auto;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .link_change {
+        color: #FF0048;
+    }
+
+    .link_new {
+        font-size: 15px !important;
+        padding: 2px 10px;
+        float: right;
+    }
+
+        .link_new i {
+            font-size: 15px !important;
+            margin-right: 5px;
+        }
+
+    .link_pick {
+        color: green;
+    }
+
+    /* Theme Edits */
+    .select2-selection__arrow {
+        top: 50% !important;
+        right: 20px !important;
+        transform: translateY(-50%);
+    }
+    .select2 {
+        border-bottom-left-radius: 0.25rem !important;
+        border-top-left-radius: 0.25rem !important;
+    }
+    .select2-selection {
+        border: none !important;
+    }
+</style>
+<div class="link_container">
+    <label for="-#Id--link_options">
+        -#Title-
+        <button id="-#Id--link_create" class="link_new btn btn-secondary -#Create-">
+            <i id="link_create" class="link_icon fas fa-plus"></i>
+            Crear
+        </button>
+    </label>
+    <div id="-#Id--link_selected">
+        <a id="-#Id--link_action" onclick="" href="#">
+
+        </a>
+        <i id="-#Id--link_edit" onclick="" class="link_icon link_change fas fa-edit"></i>
+    </div>
+    <div id="-#Id--link_selector">
+        <div class="form-group">
+            <div class="input-group">
+                <select id="-#Id--link_options"
+                        name="-#Id--link_options"
+                        class="form-control"
+                        -#Disabled->
+                    <option selected="selected" value='' disabled>Escoja Una Opcion</option>
+                    -#DisplayOptions-
+                </select>
+                <div id="-#Id--link_save" class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="link_icon link_pick fas fa-check"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="-#Id-" name="-#Id-" ColumnDataName="-#ColumnDataName-" class="ltl_input d-none" TipoDato="-#TipoDato-"/>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var $options = $('#-#Id--link_options');
+        var $link = $('#-#Id-');
+        var $action = $('#-#Id--link_action');
+        // >> Initialize The Select
+        $options.select2();
+        $('.select2').addClass('form-control');
+        
+        $('#-#Id--link_create').click(function () {
+            $('#-#Id-').trigger('link_create', [$("-#Id-")]);
+            return false;
+        });
+
+        $('#-#Id-').change(function () {
+            $options.val($('#-#Id-').val()).change();
+            eval();
+        });
+
+        $('#-#Id-').on('add-link', function (ev, option) {
+            $options.append(option).change();
+            $link.val($options.val());
+            eval();
+        });
+
+        $action.click(function () {
+            var $selected = $('#-#Id--link_options option:selected');
+            $('#-#Id-').trigger('link_action', [$selected.val()]);
+            return false;
+        });
+
+        // >> State Change
+        var eval = function () {
+            var $selected = $('#-#Id--link_options option:selected');
+
+            $action.html($selected.text());
+
+            if (!$link.val()) {
+                $('#-#Id--link_selector').css({
+                    display: "inherit"
+                });
+                $('#-#Id--link_selected').hide();
+            } else {
+                $('#-#Id--link_selected').css({
+                    display: "inherit"
+                });
+                $('#-#Id--link_selector').hide();
+            }
+        }
+        eval();
+
+        $('#-#Id--link_save').click(function (ev) {
+            var $selected = $('#-#Id--link_options option:selected');
+            $link.val($selected.val());
+            eval();
+        });
+        $('#-#Id--link_edit').click(function (ev) {
+            $link.val("");
+            eval();
+        });
+    })
+</script>

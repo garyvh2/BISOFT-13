@@ -1,0 +1,11 @@
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\bin\Debug\Cliente.exe
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\bin\Debug\Cliente.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\bin\Debug\AccesoDatos.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\bin\Debug\Entidades.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\bin\Debug\AccesoDatos.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\bin\Debug\Entidades.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\obj\Debug\Cliente.exe
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Cliente\obj\Debug\Cliente.pdb

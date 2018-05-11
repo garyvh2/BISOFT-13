@@ -1,0 +1,14 @@
+﻿{
+  "formTarjetas": {
+    "rules": {
+      "NUMERO_PLACA": {
+        "required": true
+      }
+    },
+    "messages": {
+      "NUMERO_PLACA": {
+        "required": "Por favor especifique el numero de placa del bus que desea buscar"
+      }
+    }
+  }
+}

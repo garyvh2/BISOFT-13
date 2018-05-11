@@ -1,0 +1,87 @@
+﻿<style>
+    span i {
+        color: #cbcbcb;
+    }
+
+    .card-activator {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 25px;
+    }
+
+    .card-states {
+        position: relative;
+        display: block;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .card-box {
+        display: table;
+        position: absolute;
+        width: inherit;
+        height: inherit;
+    }
+
+        .card-box i {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+            .card-box i.fa-circle-notch {
+                display: none;
+                color: #007bff;
+            }
+
+            .card-box i.fa-circle-notch {
+                display: none;
+                color: #007bff;
+            }
+
+    .card-input input {
+        width: 350px;
+    }
+
+    .card-input button {
+        width: 100%;
+    }
+
+    .submit-state {
+        display: none;
+        position: absolute;
+        right: 0px;
+        bottom: 20px;
+    }
+</style>
+<div class="card-activator">
+    <div class="card-states mb-3" align="center">
+        <span class="card-box">
+            <i class="fas fa-credit-card fa-10x"></i>
+        </span>
+        <span class="card-box">
+            <i class="fas fa-circle-notch fa-spin fa-7x"></i>
+        </span>
+        <i class="submit-state fas fa-times-circle fa-4x"></i>
+    </div>
+    <div class="card-input" align="center">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-camera"></i>
+                    </span>
+                </div>
+                <input id="cardId" name="cardId" type="text" class="form-control">
+                <div class="input-group-append">
+                    <span id="valid-state" class="input-group-text">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <button id="submitCard" type="button" class="btn btn-primary" disabled>Enviar</button>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Permiso/Permiso.css">
+<script src="~/Views/AdminScreen/Permiso/Permiso.js"></script>
+
+
+
+@Html.CtrlTable(viewName: "PermisoHandler", id: "tblPermisos", title: "Permisos",
+                    columnsTitle: "Id,Nombre,Icono,Accion,Orden",
+                    ColumnsDataName: "Id,Nombre,Icono,Accion,Orden", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y creacion de permisos
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "PermisoHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "PermisoHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="formPermisos" class="row" validator="@Url.Content("~/Views/AdminScreen/Permiso/Permiso.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Id", "Id", CtrlInputTypes.TEXT, Disabled: "", Bootstrap_Clases: "d-none")
+                    @Html.CtrlInput("Nombre", "Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlFontAwesomePicker("Icono", "Icono", Value: "fas fa-heart", Disabled: "")
+                    <br>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Accion", "Accion", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Orden", "Orden", CtrlInputTypes.NUMBER)
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

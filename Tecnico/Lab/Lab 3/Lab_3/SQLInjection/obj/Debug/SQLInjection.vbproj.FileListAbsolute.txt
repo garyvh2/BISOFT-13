@@ -1,0 +1,11 @@
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\obj\Debug\SQLInjection.vbprojResolveAssemblyReference.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\obj\Debug\SQLInjection.Resources.resources
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\obj\Debug\SQLInjection.vbproj.GenerateResource.Cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\obj\Debug\SQLInjection.vbproj.CoreCompileInputs.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\bin\Debug\SQLInjection.exe.config
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\bin\Debug\SQLInjection.exe
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\bin\Debug\SQLInjection.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\bin\Debug\SQLInjection.xml
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\obj\Debug\SQLInjection.exe
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\obj\Debug\SQLInjection.xml
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3\SQLInjection\obj\Debug\SQLInjection.pdb

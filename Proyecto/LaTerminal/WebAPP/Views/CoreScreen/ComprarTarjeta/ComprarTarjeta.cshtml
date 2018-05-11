@@ -1,0 +1,41 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/CoreScreen/ComprarTarjeta/ComprarTarjeta.css">
+<script src="~/Views/CoreScreen/ComprarTarjeta/ComprarTarjeta.js"></script>
+
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Formulario de compra de tarjetas
+    </div>
+    <div class="card-header card-subheader">
+        <button id="comprar" class="btn btn-secondary">Procesar compra</button>
+    </div>
+    <div class="card-body">
+        <form id="ComprarTarjetaForm" class="row mb-3" validator="@Url.Content("~/Views/CoreScreen/ComprarTarjeta/ComprarTarjeta.json")">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                    @Html.CtrlInput("Identificacion", "Número de cédula o identificación", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Correo", "Correo electrónico", CtrlInputTypes.TEXT) 
+                    <br>
+                    @{var Tipo = Html.CtrlComboBox<TipoTarjeta>("Id_Tipo", "Tipo de tarjeta", "", "tipotarjeta", Placeholder: true, IdField: "ID", DescriptionField: "NOMBRE");}
+                    @Tipo
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script id="pago" type="text/html">
+    @Html.CtrlPayment()
+</script>

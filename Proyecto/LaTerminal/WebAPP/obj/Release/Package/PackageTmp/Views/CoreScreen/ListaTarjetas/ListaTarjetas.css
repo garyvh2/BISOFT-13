@@ -1,0 +1,40 @@
+﻿.pricing__item {
+    margin: 5px;
+    max-width: 350px !important;
+    padding: 30px 20px !important;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.pricing__item i {
+    margin: 10px 0;
+}
+.pricing__action {
+    margin: 5px 0;
+    width: 100%;
+}
+.pricing__title {
+    margin: 4px 0 !important;
+    font-weight: 900;
+    font-size: 1.5em !important;
+}
+.pricing--rabten .pricing__item:hover .pricing__anim {
+    animation: none !important;
+}
+.recargar {
+    background: #FF0048 !important;
+}
+.transaccion {
+    background: #2A2A2A !important;
+}
+.fa-check-circle {
+    color: #00E100;
+}
+.fa-times-circle {
+    color: #BA1B1B;
+}
+.fa-hourglass {
+    color: #254D92;
+}
+.pricing.pricing--rabten {
+    padding: 0 !important;
+}

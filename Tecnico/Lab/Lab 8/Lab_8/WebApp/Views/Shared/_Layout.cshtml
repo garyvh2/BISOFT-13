@@ -1,0 +1,42 @@
+﻿@using WebAPP.Helpers;
+
+<!DOCTYPE html>
+<html>
+<head>
+    @* >> Meta Tags *@
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content='viewport-fit=cover, width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no'>
+
+    @* >> Font Importings *@
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    @* >> JavaScript Importings *@
+    @Scripts.Render("~/bundles/libs")
+
+    @* >> CSS Importings *@
+    @Styles.Render("~/Content/css")
+
+    <title>Lab 8</title>
+</head>
+<body>
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Lab 8</span>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+    </div>
+    <main class="container">
+        @RenderBody()
+    </main>
+</body>
+</html>

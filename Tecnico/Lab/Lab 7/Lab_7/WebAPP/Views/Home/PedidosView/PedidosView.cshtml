@@ -1,0 +1,15 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBox;
+
+
+<script src="~/Views/Home/PedidosView/PedidosView.js"></script>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@Html.CtrlTable("tblPedidos",
+    title: "Lista de Pedidos",
+    columnsTitle: "Id,Email,Fecha,Comercio,Direccion,Total,Estado",
+    ColumnsDataName: "Id,Email,Fecha,Comercio,Direccion,Total,Estado")

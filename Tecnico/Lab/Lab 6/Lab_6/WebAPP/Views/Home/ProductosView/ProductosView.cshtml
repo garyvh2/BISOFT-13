@@ -1,0 +1,15 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBox;
+
+
+<script src="~/Views/Home/ProductosView/ProductosView.js"></script>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@Html.CtrlTable("tblProductos",
+    title: "Lista de Productos",
+    columnsTitle: "Id,Nombre,Cantidad",
+    ColumnsDataName: "Id,Nombre,Cantidad")

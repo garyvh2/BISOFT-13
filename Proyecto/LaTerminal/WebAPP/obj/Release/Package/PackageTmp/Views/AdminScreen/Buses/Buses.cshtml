@@ -1,0 +1,118 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Buses/Buses.css">
+<script src="~/Views/AdminScreen/Buses/Buses.js"></script>
+@*<script src="~/Scripts/Views/LTL/ltl.forms.js"></script>*@
+
+@Html.CtrlTable(viewName: "BusHandler", id: "tblBuses", title: "Buses",
+                    columnsTitle: "Numero de placa,Empresa de bus,Nombre del chofer,Numero Unidad,Marca,Modelo,Capacidad,Espacios para discapacitados,Estado",
+                    ColumnsDataName: "NUMERO_PLACA,ID_EMPRESA_BUS,ID_CHOFER,NUMERO_UNIDAD,MARCA,MODELO,CAPACIDAD,ESPACIOS_DISCAPACITADOS,ESTADO", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+@{
+    Usuario user = (Usuario)HttpContext.Current.Session["current_user"];
+}
+
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y Registro de buses
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "BusHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "BusHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="formBuses" class="row" validator="@Url.Content("~/Views/AdminScreen/Buses/Buses.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("NUMERO_PLACA", "Numero de placa", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("NUMERO_UNIDAD", "Numero de unidad", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("MARCA", "Marca", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("MODELO", "Modelo", CtrlInputTypes.TEXT)
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("CAPACIDAD", "Capacidad", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("ESPACIOS_DISCAPACITADOS", "Espacios para discapacitados", CtrlInputTypes.NUMBER)
+                    <br>
+                    @{var Usuario = Html.CtrlSelectSearch<Usuario>(Id: "ID_CHOFER", Title: "Chofer", ListId: "CHOFER", Service: "usuario/rol", IdField: "Identificacion", DescriptionField: "PNombre");}
+                    @Usuario
+                    @{
+                        if (user.Id_Rol == "ADMIN")
+                        {
+                            var Empresa = Html.CtrlSelectSearch<Empresa_Bus>
+                                       (Id: "ID_EMPRESA_BUS", Title: "Empresa a la que pertenece", ListId: "", Service: "Empresa_Bus", IdField: "CEDULA_JUR", DescriptionField: "NOMBRE", Create: "true");
+                            <text>
+                                <br>
+                                @Empresa
+                            </text>
+                        }
+                        else
+                        {
+                            <text>
+                                @Html.CtrlInput("ID_EMPRESA_BUS", "", CtrlInputTypes.TEXT, Disabled: "", Bootstrap_Clases: "d-none", Value: user.Id_Empresa_Bus)
+                            </text>
+                        }
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script id="CrearChofer" type="text/html">
+    <div class="container">
+        <form id="CrearChoferForm" class="row mb-3" validator="@Url.Content("~/Views/AdminScreen/Buses/Buses.json")">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                    @Html.CtrlInput("Identificacion", "Identificacion", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("PNombre", "Primer Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("SNombre", "Segundo Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("PApellido", "Primer Apellido", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("SApellido", "Segundo Apellido", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Fecha_Nac", "Fecha de Nacimiento", CtrlInputTypes.DATE, Tooltip: "Debe ser mayor a 18 años")
+                    <br>
+                    @Html.CtrlInput("Correo", "Correo electrónico", CtrlInputTypes.TEXT, Tooltip: "Debe seguir el formato nombre@dominio.com")
+                    <br>
+                    @{var Genero = Html.CtrlComboBox<ListValue>("Genero", "Genero", "genero");}
+                    @Genero
+                    <br>
+                    @Html.CtrlInput("Telefono", "Número Telefónico", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlTextarea("Direccion", "Dirección", CtrlInputTypes.TEXT)
+                    <br>
+
+                    @Html.CtrlInput("First_Time", "", CtrlInputTypes.TEXT, Value: "true", Disabled: "", Bootstrap_Clases: "d-none")
+                    @Html.CtrlInput("Id_Rol", "", CtrlInputTypes.TEXT, Value: "CHOFER", Disabled: "", Bootstrap_Clases: "d-none")
+                </div>
+            </div>
+        </form>
+        <button id="CrearChoferBtn" class="btn btn-secondary">Crear Encargado</button>
+    </div>
+</script>

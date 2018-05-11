@@ -1,0 +1,2 @@
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Testing\obj\Debug\Testing.csprojResolveAssemblyReference.cache
+C:\Users\Garyy\source\Workspaces\LaTerminal\Recoding\LaTerminal_Quantum\Testing\obj\Debug\Testing.csproj.CoreCompileInputs.cache

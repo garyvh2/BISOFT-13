@@ -1,0 +1,17 @@
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\Server.dll.config
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\Server.dll
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\Server.pdb
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\Newtonsoft.Json.dll
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\System.Net.Http.Formatting.dll
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\System.Web.Http.dll
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\System.Web.Http.WebHost.dll
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\Newtonsoft.Json.xml
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\System.Net.Http.Formatting.xml
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\System.Web.Http.xml
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\bin\System.Web.Http.WebHost.xml
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\obj\Debug\Server.dll
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Server\obj\Debug\Server.pdb

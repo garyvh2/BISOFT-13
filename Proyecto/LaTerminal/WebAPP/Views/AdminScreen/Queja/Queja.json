@@ -1,0 +1,26 @@
+﻿{
+  "formQuejas": {
+    "rules": {
+      "ID_USUARIO": {
+        "required": true
+      },
+      "ID_VIAJE": {
+        "required": true
+      },
+      "DETALLE": {
+        "required": true
+      }
+    },
+    "messages": {
+      "ID_USUARIO": {
+        "required": "Por favor especifique el usuario"
+      },
+      "ID_VIAJE": {
+        "required": "Por favor especifique el viaje"
+      },
+      "DETALLE": {
+        "required": "Por favor especifique la detalle"
+      }
+    }
+  }
+}

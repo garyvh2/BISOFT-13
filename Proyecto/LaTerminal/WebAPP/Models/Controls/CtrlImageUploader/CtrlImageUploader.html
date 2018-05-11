@@ -1,0 +1,25 @@
+﻿<style>
+    #files button,
+    .fileinput-button {
+        width: 100%;
+    }
+
+    #files p * {
+        margin: 10px auto;
+    }
+</style>
+<div class="container">
+    <!-- The container for the uploaded files -->
+    <div id="files" class="files" align="center"></div>
+    <!-- The fileinput-button span is used to style the file input field as button -->
+    <span class="btn btn-success fileinput-button mb-3">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span>Agregar una imagen</span>
+        <!-- The file input field used as target for the file upload widget -->
+        <input id="fileupload" type="file" name="files[]" accept="image/x-png,image/gif,image/jpeg">
+    </span>
+    <!-- The global progress bar -->
+    <div id="progress" class="progress">
+        <div class="progress-bar progress-bar-success"></div>
+    </div>
+</div>

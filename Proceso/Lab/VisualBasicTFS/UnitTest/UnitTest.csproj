@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+<ItemGroup>
+  <Reference Include="AccesoDatos">
+    <HintPath>..\..\..\..\..\..\Desktop\AccesoDatos.dll</HintPath>
+  </Reference>
+</ItemGroup>
+  <PropertyGroup>
+   <TargetFramework>netcoreapp2.0</TargetFramework>
+   <RuntimeFrameworkVersion>2.0.5</RuntimeFrameworkVersion>
+   <ApplicationIcon />
+   <OutputType>Library</OutputType>
+   <StartupObject />
+</PropertyGroup>
+
+</Project>

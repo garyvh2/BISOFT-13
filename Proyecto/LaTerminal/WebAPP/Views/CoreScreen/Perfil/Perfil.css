@@ -1,0 +1,15 @@
+﻿.picture {
+    background-image: url("/Content/Imgs/profile_thumbnail.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: 20px;
+    border: 5px solid #2a2a2a;
+}
+.submenu {
+    display: none;
+}

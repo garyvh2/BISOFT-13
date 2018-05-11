@@ -1,0 +1,59 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Sancion/Sancion.css">
+<script src="~/Views/AdminScreen/Sancion/Sancion.js"></script>
+
+@Html.CtrlTable(viewName: "SancionHandler", id: "tblSanciones", title: "Sanciones",
+                    columnsTitle: "Id,Empresa de Bus,Detalle,Fecha,Monto,Tipo,Estado",
+                    ColumnsDataName: "Id,Id_Empresa_Bus,Detalle,Fecha,Monto,Tipo,Estado", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y creacion de sanciones
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "SancionHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "SancionHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="formSanciones" class="row" validator="@Url.Content("~/Views/AdminScreen/Sancion/Sancion.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Id", "Id", CtrlInputTypes.TEXT, Disabled: "", Bootstrap_Clases: "d-none")
+                    @{var Empresa_Bus = Html.CtrlSelectSearch<Empresa_Bus>(Id: "Id_Empresa_Bus", Title: "Empresa de bus sancionada", ListId: "", Service: "empresa_bus", IdField: "CEDULA_JUR", DescriptionField: "NOMBRE", Create: "true");}
+                    @Empresa_Bus
+                    <br>
+                    @Html.CtrlInput("Detalle", "Detalle", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Fecha", "Fecha", CtrlInputTypes.DATE)
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Monto", "Monto", CtrlInputTypes.NUMBER, Min: "0")
+                    <br>
+                    @{var Tipo = Html.CtrlComboBox<ListValue>("Tipo", "Tipo", "tipo_sancion");}
+                    @Tipo
+                    <br>
+                    @{var Estado = Html.CtrlComboBox<ListValue>("Estado", "Estado", "estado_sancion");}
+                    @Estado
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

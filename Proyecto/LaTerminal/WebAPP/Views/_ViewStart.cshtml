@@ -1,0 +1,18 @@
+﻿@using System.Configuration;
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    @{
+        var API_BASE_URL = ConfigurationManager.AppSettings["API_BASE_URL"];
+        var WEB_BASE_URL = ConfigurationManager.AppSettings["WEB_BASE_URL"];
+    }
+    $(document).ready(function () {
+        ltl.api.root = "@API_BASE_URL";
+        ltl.web.root = "@WEB_BASE_URL";
+        ltl.Conf.Refresh();
+    })
+</script>

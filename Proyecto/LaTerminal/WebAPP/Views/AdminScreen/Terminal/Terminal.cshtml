@@ -1,0 +1,103 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Terminal/Terminal.css">
+<script src="~/Views/AdminScreen/Terminal/Terminal.js"></script>
+
+
+@Html.CtrlTable(viewName: "TerminalHandler", id: "tblTerminales", title: "Terminales",
+                    columnsTitle: "Cédula Jurídica,Nombre,Direccion,Latitud,Longitud,Telefono,Correo,Encargado",
+                    ColumnsDataName: "CEDULA_JUR,NOMBRE,DIRECCION,LAT,LONG,TELEFONO,CORREO,Nombre_Encargado", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+@{
+    Usuario user = (Usuario)HttpContext.Current.Session["current_user"];
+}
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y creacion de terminales
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "TerminalHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "TerminalHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+
+    <div class="card-body">
+        <form id="formTerminales" class="row" validator="@Url.Content("~/Views/AdminScreen/Terminal/Terminal.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("CEDULA_JUR", "Cédula Jurídica", CtrlInputTypes.TEXT)
+                    <br>
+                    @{var Usuario = Html.CtrlSelectSearch<Usuario>(Id: "Id_Usuario", Title: "Usuario Encargado", ListId: "ENCARGADO_TERMINAL", Service: "usuario/rol", IdField: "Identificacion", DescriptionField: "PNombre");}
+                    @Usuario
+                    <br>
+                    @Html.CtrlInput("NOMBRE", "Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("TELEFONO", "Telefono", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("CORREO", "Correo", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlTextarea("DIRECCION", "Direccion", CtrlInputTypes.TEXT)
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("LAT", "Latitud", CtrlInputTypes.NUMBER, Disabled: "", Bootstrap_Clases: "d-none")
+                    @Html.CtrlInput("LONG", "Longitud", CtrlInputTypes.NUMBER, Disabled: "", Bootstrap_Clases: "d-none")
+                    @Html.CtrlInput("autocomplete", "Ubicación", CtrlInputTypes.TEXT, Placeholder: "Ingrese una ubicación")
+                    <div id="map" style="height:400px;"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script id="CrearEncargado" type="text/html">
+    <div class="container">
+        <form id="CrearEncargadoForm" class="row mb-3" validator="@Url.Content("~/Views/AdminScreen/Terminal/Terminal.json")">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                    @Html.CtrlInput("Identificacion", "Identificacion", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("PNombre", "Primer Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("SNombre", "Segundo Nombre", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("PApellido", "Primer Apellido", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("SApellido", "Segundo Apellido", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Fecha_Nac", "Fecha de Nacimiento", CtrlInputTypes.DATE, Tooltip: "Debe ser mayor a 18 años")
+                    <br>
+                    @Html.CtrlInput("Correo", "Correo electrónico", CtrlInputTypes.TEXT, Tooltip: "Debe seguir el formato nombre@dominio.com")
+                    <br>
+                    @{var Genero = Html.CtrlComboBox<ListValue>("Genero", "Genero", "genero");}
+                    @Genero
+                    <br>
+                    @Html.CtrlInput("Telefono", "Número Telefónico", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlTextarea("Direccion", "Dirección", CtrlInputTypes.TEXT)
+                    <br>
+
+                    @Html.CtrlInput("First_Time", "", CtrlInputTypes.TEXT, Value: "true", Disabled: "", Bootstrap_Clases: "d-none")
+                    @Html.CtrlInput("Id_Rol", "", CtrlInputTypes.TEXT, Value: "ENCARGADO_TERMINAL", Disabled: "", Bootstrap_Clases: "d-none")
+                </div>
+            </div>
+        </form>
+        <button id="CrearEncargadoBtn" class="btn btn-secondary">Crear Encargado</button>
+    </div>
+</script>

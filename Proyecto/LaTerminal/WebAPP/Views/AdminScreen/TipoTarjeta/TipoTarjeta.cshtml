@@ -1,0 +1,56 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/TipoTarjeta/TipoTarjeta.css">
+<script src="~/Views/AdminScreen/TipoTarjeta/TipoTarjeta.js"></script>
+
+@Html.CtrlTable(viewName: "TarjetaHandler", id: "tblTipoTarjetas", title: "Tipos de Tarjeta",
+                    columnsTitle: "ID,Nombre,Beneficio",
+                    ColumnsDataName: "ID,NOMBRE,BENEFICIO", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y creacion de tipos de tarjeta
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "TarjetaHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "TarjetaHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="formTipoTarjetas" class="row" validator="@Url.Content("~/Views/AdminScreen/TipoTarjeta/TipoTarjeta.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("ID", "Id", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("NOMBRE", "Nombre", CtrlInputTypes.TEXT)
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    <div class="input-group">
+                        @Html.CtrlInput("BENEFICIO", "Beneficio", CtrlInputTypes.NUMBER, Min: "1", Max: "100", Value: "1")
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fas fa-percent"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

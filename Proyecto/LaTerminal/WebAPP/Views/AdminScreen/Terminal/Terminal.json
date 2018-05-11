@@ -1,0 +1,120 @@
+﻿{
+  "formTerminales": {
+    "rules": {
+      "CEDULA_JUR": {
+        "required": true
+      },
+      "NOMBRE": {
+        "required": true
+      },
+      "TELEFONO": {
+        "required": true
+      },
+      "DIRECCION": {
+        "required": true
+      },
+      "CORREO": {
+        "required": true
+      },
+      "LAT": {
+        "required": true
+      },
+      "LONG": {
+        "required": true
+      },
+      "Id_Usuario": {
+        "required": true
+      }
+    },
+    "messages": {
+      "CEDULA_JUR": {
+        "required": "Por favor especifique la cedula juridica"
+      },
+      "NOMBRE": {
+        "required": "Por favor especifique el nombre"
+      },
+      "TELEFONO": {
+        "required": "Por favor especifique el numero telefonico"
+      },
+      "DIRECCION": {
+        "required": "Por favor especifique la direccion"
+      },
+      "CORREO": {
+        "required": "Por favor especifique el correo electrónico"
+      },
+      "LAT": {
+        "required": "Por favor especifique la latitud"
+      },
+      "LONG": {
+        "required": "Por favor especifique la longitud"
+      },
+      "Id_Usuario": {
+        "required": "Por favor especifique el encargado de terminal"
+      }
+    }
+  },
+  "CrearEncargadoForm": {
+    "rules": {
+      "Identificacion": {
+        "required": true
+      },
+      "PNombre": {
+        "required": true
+      },
+      "PApellido": {
+        "required": true
+      },
+      "Fecha_Nac": {
+        "required": true,
+        "minAge": 18
+      },
+      "Correo": {
+        "required": true,
+        "email": true
+      },
+      "Genero": {
+        "required": true
+      },
+      "Id_Rol": {
+        "required": true
+      },
+      "Telefono": {
+        "required": true
+      },
+      "Direccion": {
+        "required": true
+      }
+    },
+    "messages": {
+      "Identificacion": {
+        "required": "Por favor especifique la identificacion"
+      },
+      "PNombre": {
+        "required": "Por favor especifique el primer nombre"
+      },
+      "PApellido": {
+        "required": "Por favor especifique el primer apellido"
+      },
+      "Fecha_Nac": {
+        "required": "Por favor especifique una fecha de nacimiento",
+        "minAge": "Debe ser mayor a 18 años"
+      },
+      "Correo": {
+        "required": "Por favor especifique un correo electrónico",
+        "email": "El valor de correo electronico debe seguir el formato 'nombre@dominio.com'"
+      },
+      "Genero": {
+        "required": "Por favor especifique un genero"
+      },
+      "Id_Rol": {
+        "required": "Por favor especifique un rol"
+      },
+      "Telefono": {
+        "required": "Por favor especifique un numero telefonico"
+      },
+      "Direccion": {
+        "required": "Por favor especifique una direccion"
+      }
+    }
+  }
+}

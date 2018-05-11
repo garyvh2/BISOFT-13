@@ -1,0 +1,236 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/HomeScreen/Index/Index.css">
+
+<div id="hs-back">
+    <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
+</div>
+<header>
+    <div id="hs-head">
+        <div id="hs-map"></div>
+    </div>
+    <div id="hs-animation">
+        <canvas id="animation"></canvas>
+    </div>
+    <div id="hs-head-over">
+        <div id="hs-box" align="center">
+            <div id="hs-text">
+                <h1>La Terminal</h1>
+                <p>Soluciones de transporte que conectan a los costarricenses</p>
+                <button id="entidadesJuridicas" type="button" class="btn btn-custom">Entidades Juridicas</button>
+            </div>
+        </div>
+    </div>
+    <div id="hs-logo">
+        <div id="logo">
+            <img src="https://i.imgur.com/Q4lljkJ.png" alt="">
+        </div>
+        <div id="buttons">
+            <a href="#" id="iniciarSession">Iniciar Sesión</a>
+        </div>
+    </div>
+    <div id="hs-tech">
+        <ul class="scroll" align="center">
+            <li>
+                <img src="~/Content/Assets/twilio.svg" alt="">
+            </li>
+            <li>
+                <img src="~/Content/Assets/sendgrid.png" alt="">
+            </li>
+            <li>
+                <img src="~/Content/Assets/microsoft.png" alt="">
+            </li>
+            <li>
+                <img src="~/Content/Assets/jquery.svg" alt="">
+            </li>
+            <li>
+                <img src="~/Content/Assets/bootstrap.png" alt="">
+            </li>
+            <li>
+                <img src="~/Content/Assets/sqlserver.png" alt="">
+            </li>
+        </ul>
+    </div>
+</header>
+<main class="container">
+    <div class="row title" align="center">
+        <h1>Beneficios</h1>
+    </div>
+    <div id="hs-services" class="row">
+        <ul align="center">
+            <li id="hs-service">
+                <div id="hs-service-icon">
+                    <i class="fas fa-credit-card fa-3x"></i>
+                </div>
+                <div id="hs-service-content">
+                    <h1>Tarjetas</h1>
+                    <p>
+                        Con nuestras tarjetas nunca mas deberas portar el problematico efectivo para el uso de rutas y estacionamiento.
+                    </p>
+                </div>
+            </li>
+            <li id="hs-service">
+                <div id="hs-service-icon">
+                    <i class="fas fa-car fa-3x"></i>
+                </div>
+                <div id="hs-service-content">
+                    <h1>Estacionamiento</h1>
+                    <p>
+                        Ofrecemos el servicio de estacionamientos para clientes en nuestras instalaciones.
+                    </p>
+                </div>
+            </li>
+            <li id="hs-service">
+                <div id="hs-service-icon">
+                    <i class="fas fa-tags fa-3x"></i>
+                </div>
+                <div id="hs-service-content">
+                    <h1>Descuentos</h1>
+                    <p>
+                        Ofrecemos descuentos a estudiantes, extranjeros y personas de condicion especial.
+                    </p>
+                </div>
+            </li>
+            <li id="hs-service">
+                <div id="hs-service-icon">
+                    <i class="fas fa-globe fa-3x"></i>
+                </div>
+                <div id="hs-service-content">
+                    <h1>Plataforma Virtual</h1>
+                    <p>
+                        Todos nuestros servicios estan disponibles en nuestra plataforma virtual para un facil acceso desde cualquier lugar.
+                    </p>
+                </div>
+            </li>
+            <li id="hs-service">
+                <div id="hs-service-icon">
+                    <i class="fas fa-comment fa-3x"></i>
+                </div>
+                <div id="hs-service-content">
+                    <h1>Atencion al cliente</h1>
+                    <p>
+                        Nuestro objetivo es ofrecer un servicio justo y al alcance del estandar de nuestros clientes. Por lo que estamos abiertos
+                        a cualquier tipo de sugerencia o queja.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="row title" align="center">
+        <h1>Rutas Activas</h1>
+    </div>
+    <div id="hs-rutas" class="row">
+        <div id="hs-tabla">
+            <div id="coming-soon">
+                <i class="fas fa-hourglass fa-5x"></i>
+                <h1>Coming Soon</h1>
+            </div>
+        </div>
+    </div>
+</main>
+
+@Html.CtrlFooter()
+
+<script type="text/html" id="iniciarSessionTemplate">
+    <style>
+        #recuperarClave {
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+    <form action="" name="iniciarSession" id="iniciarSession">
+        @Html.CtrlInput("email", "Correo Electrónico", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("password", "Contraseña", CtrlInputTypes.PASSWORD)
+        <br>
+        <a href="#" id="recuperarClave">Recuperar contraseña</a>
+    </form>
+</script>
+@{var Genero = Html.CtrlComboBox<ListValue>("Genero", "Genero", "genero");}
+<script type="text/html" id="UsuarioJuridicoTemplate">
+    <form action="" name="UsuarioJuridico" id="UsuarioJuridico" validator="@Url.Content("~/Views/HomeScreen/Index/Index.json")">
+        @Html.CtrlInput("Identificacion", "Identificación", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("PNombre", "Primer Nombre", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("SNombre", "Segundo Nombre", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("PApellido", "Primer Apellido", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("SApellido", "Segundo Apellido", CtrlInputTypes.TEXT)
+        <br>
+        @Genero
+        <br>
+        @Html.CtrlInput("Fecha_Nac", "Fecha de Nacimiento", CtrlInputTypes.DATE)
+        <br>
+        @Html.CtrlInput("Telefono", "Número Telefónico", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlTextarea("Direccion", "Dirección", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("Correo", "Correo electrónico", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("Clave", "Clave", CtrlInputTypes.PASSWORD)
+        <br>
+        @Html.CtrlInput("Clave_Rep", "Confirmar Clave", CtrlInputTypes.PASSWORD)
+
+        @Html.CtrlInput("First_Time", "", CtrlInputTypes.TEXT, Value: "false", Disabled: "", Bootstrap_Clases: "d-none")
+        @Html.CtrlInput("Id_Rol", "", CtrlInputTypes.TEXT, Value: "JURIDICO", Disabled: "", Bootstrap_Clases: "d-none")
+        @Html.CtrlInput("Approved", "", CtrlInputTypes.TEXT, Value: "false", Disabled: "", Bootstrap_Clases: "d-none")
+    </form>
+</script>
+<script type="text/html" id="actualizarPerfilTemplate">
+    <form action="" name="actualizarPerfil" id="actualizarPerfil">
+        @Html.CtrlInput("PNombre", "Primer Nombre", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("SNombre", "Segundo Nombre", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("PApellido", "Primer Apellido", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("SApellido", "Segundo Apellido", CtrlInputTypes.TEXT)
+        <br>
+        @Genero
+        <br>
+        @Html.CtrlInput("Fecha_Nac", "Fecha de Nacimiento", CtrlInputTypes.DATE)
+        <br>
+        @Html.CtrlInput("Telefono", "Número Telefónico", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlTextarea("Direccion", "Dirección", CtrlInputTypes.TEXT)
+        <br>
+        @Html.CtrlInput("Clave", "Nueva Clave", CtrlInputTypes.PASSWORD)
+        <br>
+        @Html.CtrlInput("Clave_Rep", "Confirmar Clave", CtrlInputTypes.PASSWORD)
+    </form>
+</script>
+<script type="text/html" id="pictureUpload">
+    @Html.CtrlImageUploader()
+</script>
+<script type="text/html" id="activarTarjeta">
+    @Html.CtrlCardActivator()
+</script>
+
+
+<script src="~/Scripts/Libs/EasePack.min.js"></script>
+<script src="~/Scripts/Libs/rAF.js"></script>
+<script src="~/Scripts/Libs/TweenLite.min.js"></script>
+<script src="~/Scripts/Views/Animation.js"></script>
+<script src="~/Views/HomeScreen/Index/Index.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcw_XTpjJEOK7iWvfcfqrQKKKW6BmPxg"></script>
+
+
+<link rel="stylesheet" href="~/Content/jquery.fileupload.css">
+<script src="~/Scripts/Libs/jquery.ui.widget.js"></script>
+<script src="~/Scripts/Libs/load-image.all.min.js"></script>
+<script src="~/Scripts/Libs/canvas-to-blob.min.js"></script>
+<script src="~/Scripts/Libs/jquery.iframe-transport.js"></script>
+<script src="~/Scripts/Libs/jquery.fileupload.js"></script>
+<script src="~/Scripts/Libs/jquery.fileupload-process.js"></script>
+<script src="~/Scripts/Libs/jquery.fileupload-image.js"></script>
+<script src="~/Scripts/Libs/jquery.fileupload-validate.js"></script>

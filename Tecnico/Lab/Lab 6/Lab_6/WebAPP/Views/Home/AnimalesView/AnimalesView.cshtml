@@ -1,0 +1,16 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBox;
+
+
+<link rel="stylesheet" href="~/Views/Home/AnimalesView/AnimalesView.css">
+<script src="~/Views/Home/AnimalesView/AnimalesView.js"></script>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@Html.CtrlTable("tblAnimales",
+    title: "Lista de Animales",
+    columnsTitle: "Id,Tipo Animal,Nombre,Alimento,Edad,FechaNac",
+    ColumnsDataName: "Id,IdTipoAnimal,Nombre,Alimento,Edad,FechaNac")

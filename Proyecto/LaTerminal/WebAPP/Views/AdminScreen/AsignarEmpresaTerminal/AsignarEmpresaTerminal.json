@@ -1,0 +1,20 @@
+﻿{
+  "formAsignacion": {
+    "rules": {
+      "ID_TERMINAL": {
+        "required": true
+      },
+      "CEDULA_JUR": {
+        "required": true
+      }
+    },
+    "messages": {
+      "ID_TERMINAL": {
+        "required": "Por favor especifique la terminal"
+      },
+      "CEDULA_JUR": {
+        "required": "Por favor especifique la empresa de buses"
+      }
+    }
+  }
+}

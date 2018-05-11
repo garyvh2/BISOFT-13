@@ -1,0 +1,54 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Empresa_Bus/Empresa_Bus.css">
+<script src="~/Views/AdminScreen/Empresa_Bus/Empresa_Bus.js"></script>
+
+
+
+@Html.CtrlTable(viewName: "Empresa_BusHandler", id: "tblEmpresas_Buses", title: "Empresas de Bus",
+                    columnsTitle: "Cedula Juridica,Logo,Codigo,Nombre,Telefono,Correo,Estado",
+                    ColumnsDataName: "Cedula_Jur,Logo,Codigo,Nombre,Telefono,Correo,Estado", FunctionName: "BindFields")
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        <div class="row pull-right">
+            <div class="col-md-8">Customer edition</div>
+            <div class="col-md-4">
+                @Html.CtrlButton(viewName: "Empresa_BusHandler", Id: "btnCreate", Title: "Save", FunctionName: "post", Bootstrap_Classes: "btn-success")
+                @Html.CtrlButton(viewName: "Empresa_BusHandler", Id: "btnUpdate", Title: "Save changes", FunctionName: "put", Bootstrap_Classes: "btn-info")
+                @Html.CtrlButton(viewName: "Empresa_BusHandler", Id: "btnDelete", Title: "Delete", FunctionName: "delete", Bootstrap_Classes: "btn-danger")
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <form id="formEstacionamientos" class="row">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Cedula Juridica", "Cedula_Jur", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Codigo", "Codigo", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Nombre", "Nombre", CtrlInputTypes.TEXT)
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Telefono", "Telefono", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Correo", "Correo", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Estado", "Estado", CtrlInputTypes.TEXT)
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

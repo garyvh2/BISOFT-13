@@ -1,0 +1,30 @@
+﻿{
+  "formTipoTarjetas": {
+    "rules": {
+      "ID": {
+        "required": true
+      },
+      "NOMBRE": {
+        "required": true
+      },
+      "BENEFICIO": {
+        "required": true,
+        "min": 1,
+        "max": 100
+      }
+    },
+    "messages": {
+      "ID": {
+        "required": "Por favor especifique el ID"
+      },
+      "NOMBRE": {
+        "required": "Por favor especifique el nombre"
+      },
+      "BENEFICIO": {
+        "required": "Por favor especifique el beneficio",
+        "min": "El beneficio minimo es 1%",
+        "max": "El beneficio maximo es 100%"
+      }
+    }
+  }
+}

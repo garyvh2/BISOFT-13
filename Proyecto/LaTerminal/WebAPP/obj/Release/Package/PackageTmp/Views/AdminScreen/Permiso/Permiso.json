@@ -1,0 +1,32 @@
+﻿{
+  "formPermisos": {
+    "rules": {
+      "Nombre": {
+        "required": true
+      },
+      "Icono": {
+        "required": true
+      },
+      "Accion": {
+        "required": true
+      },
+      "Orden": {
+        "required":  true
+      }
+    },
+    "messages": {
+      "Nombre": {
+        "required": "Por favor especifique el nombre"
+      },
+      "Icono": {
+        "required": "Por favor especifique el icono"
+      },
+      "Accion": {
+        "required": "Por favor especifique la accion"
+      },
+      "Orden": {
+        "required": "Por favor especifique el orden"
+      }
+    }
+  }
+}

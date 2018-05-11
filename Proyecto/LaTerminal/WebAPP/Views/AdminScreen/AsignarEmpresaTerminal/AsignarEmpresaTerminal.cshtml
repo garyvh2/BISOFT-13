@@ -1,0 +1,52 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/AsignarEmpresaTerminal/AsignarEmpresaTerminal.css">
+<script src="~/Views/AdminScreen/AsignarEmpresaTerminal/AsignarEmpresaTerminal.js"></script>
+
+
+
+@Html.CtrlTable(viewName: "EmpresaHandler", id: "tblAsignaciones", title: "Asignaciones",
+                    columnsTitle: "Cédula Jurídica,Nombre,Telefono,Correo",
+                    ColumnsDataName: "CEDULA_JUR,NOMBRE,TELEFONO,CORREO", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+@{
+    Usuario user = (Usuario)HttpContext.Current.Session["current_user"];
+}
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Asociacion de empresas a terminales
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "EmpresaHandler", Id: "btnCreate", Title: "Asignar", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+    </div>
+
+    <div class="card-body">
+        <form id="formAsignacion" class="row" validator="@Url.Content("~/Views/AdminScreen/AsignarEmpresaTerminal/AsignarEmpresaTerminal.json")">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                    @{var Terminal = Html.CtrlSelectSearch<Terminal>(Id: "ID_TERMINAL", Title: "Terminal", ListId: "", Service: "terminal", IdField: "CEDULA_JUR", DescriptionField: "NOMBRE", Create: "true");}
+                    @Terminal
+                    <br>
+                    @{var Empresa = Html.CtrlSelectSearch<Empresa_Bus>(Id: "CEDULA_JUR", Title: "Empresa de buses", ListId: "", Service: "empresa_bus", IdField: "CEDULA_JUR", DescriptionField: "NOMBRE", Create: "true");}
+                    @Empresa
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

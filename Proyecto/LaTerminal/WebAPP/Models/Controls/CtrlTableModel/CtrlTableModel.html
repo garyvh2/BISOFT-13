@@ -1,0 +1,80 @@
+﻿<style>
+    table tr th.select-checkbox.selected::after,
+    table tr.selected td.select-checkbox::after {
+        content: '\2714';
+        font-size: 20px;
+        margin: 0 !important;
+        text-align: center;
+        text-shadow: none !important;
+        display: block;
+        position: absolute;
+        width: 24px !important;
+        height: 24px !important;
+        box-sizing: border-box;
+        color: #FF0048 !important;
+        top: 50% !important;
+        left: 50% !important;
+        text-align: center;
+        transform: translateX(-46%) translateY(-64%);
+    }
+    table tr th.select-checkbox::before,
+    table tr td.select-checkbox::before {
+        content: ' ';
+        margin: 0 !important;
+        border: 1px solid black;
+        border-radius: 3px;
+        display: block;
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        width: 18px !important;
+        height: 18px !important;
+        box-sizing: border-box;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    table tr th.select-checkbox {
+        position: relative;
+    }
+    tr.selected *,
+    tr.selected .sorting_1 {
+        background: #ecf0f1 !important;
+        color: #000;
+    }
+
+    table.dataTable tbody td {
+        vertical-align: middle;
+    }
+
+    .dataTables_paginate .page-link {
+        background-color: #2D2D2D;
+    }
+
+    .dataTables_paginate .page-item.active .page-link {
+        background-color: #000000;
+    }
+    .dataTables_paginate .page-item.disabled .page-link {
+        background-color: #2D2D2D;
+    }
+</style>
+<div class="card border-primary mb-6">
+    <div class="card-header">
+        -#Title-
+    </div>
+    <div class="card-body">
+        <table id="-#Id-" 
+               class="table table-bordered display responsive" 
+               cellspacing="0" 
+               width="100%"
+               ColumnsDataName="-#ColumnsDataName-">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    -#ColumnHeaders-
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>

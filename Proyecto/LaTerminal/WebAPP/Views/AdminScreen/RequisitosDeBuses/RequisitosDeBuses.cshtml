@@ -1,0 +1,51 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/RequisitosDeBuses/RequisitosDeBuses.css">
+<script src="~/Views/AdminScreen/RequisitosDeBuses/RequisitosDeBuses.js"></script>
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+@Html.CtrlTable(viewName: "RequisitoHandler", id: "tblRequisito", title: "Requisitos de operación",
+                    columnsTitle: "Nombre del requisito,Numero de placa asignado,Cumplimiento",
+                    ColumnsDataName: "REQUISITO,ID_BUS,ESTADO", FunctionName: "BindFields")
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Administracion de requisitos de operación
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "RequisitoHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "RequisitoHandler", Id: "btnPut", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+
+    </div>
+    <div class="card-body">
+        <form id="formRequisito" class="row" validator="@Url.Content("~/Views/AdminScreen/Requisitos/requisito.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("ID_BUS", "Numero de placa", CtrlInputTypes.TEXT)
+                    @{var Requisitos = Html.CtrlComboBox<Requisitos>("ID_REQUISITO", "Requisito", "", "Requisitos", Default: false, IdField: "ID", DescriptionField: "NOMBRE");}
+                    @Requisitos
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @{ var Estado = Html.CtrlComboBox<ListValue>("Cumple con el valor", "No Cumple con el valor", "ESTADO");}
+                    @Estado
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

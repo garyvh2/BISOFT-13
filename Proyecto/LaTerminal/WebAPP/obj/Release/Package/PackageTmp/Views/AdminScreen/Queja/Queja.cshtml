@@ -1,0 +1,53 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Queja/Queja.css">
+<script src="~/Views/AdminScreen/Queja/Queja.js"></script>
+
+
+@Html.CtrlTable(viewName: "QuejaHandler", id: "tblQuejas", title: "Quejas",
+                    columnsTitle: "ID,Viaje,Usuario,Detalle",
+                    ColumnsDataName: "ID,ID_VIAJE,ID_USUARIO,DETALLE", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y creacion de quejas
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "QuejaHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "QuejaHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="formQuejas" class="row" validator="@Url.Content("~/Views/AdminScreen/Queja/Queja.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("ID", "Id", CtrlInputTypes.TEXT, Disabled: "", Bootstrap_Clases: "d-none")
+                    @{var Usuario = Html.CtrlComboBox<Usuario>("ID_USUARIO", "Usuario asignado", "", "usuario", Default: true, IdField: "Identificacion", DescriptionField: "PNombre");}
+                    @Usuario
+                    <br>
+                    @{var Viaje = Html.CtrlComboBox<Viaje>("ID_VIAJE", "Viaje", "", "viaje", Default: true, Placeholder: false, IdField: "Id", DescriptionField: "Id_Horario");}
+                    @Viaje
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("DETALLE", "Detalle", CtrlInputTypes.TEXT, Placeholder: "Detalle")
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿{
+  "formTarjetas": {
+    "rules": {
+      "Id_Bus": {
+        "required": true
+      },
+      "ID_Ruta": {
+        "required": true
+      },
+      "Salida": {
+        "required": true
+      },
+      "Llegada": {
+        "required": true
+      }
+    },
+    "messages": {
+      "Id_Bus": {
+        "required": "Por favor especifique el numero de placa del autobus"
+      },
+      "ID_Ruta": {
+        "required": "Por favor especifique la ruta que sera asignada al horario"
+      },
+      "Salida": {
+        "required": "Por favor especifique la hora de salida de la ruta de la terminal"
+      },
+      "Llegada": {
+        "required": "Por favor especifique la hora de estimada de llegada"
+      }
+    }
+  }
+}

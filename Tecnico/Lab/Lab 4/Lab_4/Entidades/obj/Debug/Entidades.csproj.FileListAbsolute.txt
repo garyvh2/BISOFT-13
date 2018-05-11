@@ -1,0 +1,12 @@
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Entidades\bin\Debug\Entidades.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Entidades\obj\Debug\Entidades.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_3_2\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Entidades\bin\Debug\Entidades.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Entidades\obj\Debug\Entidades.dll
+C:\Users\Garyy\source\Workspaces\Laboratorio I\Tecnico\Lab_4\Entidades\obj\Debug\Entidades.pdb

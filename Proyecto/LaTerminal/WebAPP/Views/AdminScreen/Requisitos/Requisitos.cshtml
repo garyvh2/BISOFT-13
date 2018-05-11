@@ -1,0 +1,43 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Requisitos/requisitos.css">
+<script src="~/Views/AdminScreen/Requisitos/Requisitos.js"></script>
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+@Html.CtrlTable(viewName: "RequisitoHandler", id: "tblRequisito", title: "Requisitos de operación",
+                    columnsTitle: "Numero de requisito,Nombre del requisito",
+                    ColumnsDataName: "ID,NOMBRE", FunctionName: "BindFields")
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y creacion de requisitos de operación
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "RequisitoHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @*@Html.CtrlButton(viewName: "", Id: "btnAsignar", Title: "Asignar a bus", FunctionName: "asignar()", Bootstrap_Classes:"btn-secondary")*@
+        <input type="button" id="btnAsignar" value="Asignar a bus" class="btn-secondary" onclick="datos()" />
+    </div>
+    <div class="card-body">
+        <form id="formRequisito" class="row" validator="@Url.Content("~/Views/AdminScreen/Requisitos/requisito.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("NOMBRE", "Nombre del requisito", CtrlInputTypes.TEXT)
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

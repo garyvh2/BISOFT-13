@@ -1,0 +1,16 @@
+﻿{
+  "RecargarTarjetaForm": {
+    "rules": {
+      "Saldo": {
+        "required": true,
+        "min":  1
+      }
+    },
+    "messages": {
+      "Saldo": {
+        "required": "Debe ingresar un monto",
+        "min": "El monto debe ser mínimo 1"
+      }
+    }
+  }
+}

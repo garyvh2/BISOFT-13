@@ -1,0 +1,56 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/AsignarBusHorario/AsignarBusHorario.css">
+<script src="~/Views/AdminScreen/AsignarBusHorario/AsignarBusHorario.js"></script>
+<script src="~/Scripts/Views/LTL/ltl.forms.js"></script>
+
+@Html.CtrlTable(viewName: "BusHorarioHandler", id: "tblAsignaciones", title: "Buses asignados a horario de ruta",
+                    columnsTitle: "Numero de unidad, Numero de ruta, Horario de salida",
+                    ColumnsDataName: "NUMERO_UNIDAD, NUMERO_RUTA, SALIDA", FunctionName: "BindFields")
+
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Registro y modificación de horarios
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "BusHorarioHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "BusHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="formAsignacion" class="row" validator="@Url.Content("~/Views/AdminScreen/AsignarBusHorario/AsignarBusHorario.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @{var Bus = Html.CtrlSelectSearch<Bus>(Id: "Id_Bus", Title: "Numero de placa del bus", ListId: "", Service: "Bus", IdField: "NUMERO_PLACA", DescriptionField: "NUMERO_PLACA", Create: "true");}
+                    @Bus
+                    <br>
+                    @{var Ruta = Html.CtrlSelectSearch<Ruta>(Id: "Id_Ruta", Title: "Ruta", ListId: "", Service: "Ruta", IdField: "Numero_Ruta", DescriptionField: "Numero_Ruta", Create: "true");}
+                    @Ruta
+                    <br>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Salida", "Hora de salida", CtrlInputTypes.TEXT)
+                    <br />
+                    @Html.CtrlInput("Llegada", "Hora estimada de llegada", CtrlInputTypes.TEXT)
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

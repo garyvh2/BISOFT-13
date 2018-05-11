@@ -1,0 +1,28 @@
+﻿{
+  "ComprarTarjetaForm": {
+    "rules": {
+      "Identificacion": {
+        "required": true
+      },
+      "Correo": {
+        "required": true,
+        "email": true
+      },
+      "Id_Tipo": {
+        "required": true
+      }
+    },
+    "messages": {
+      "Identificacion": {
+        "required": "Por favor especifique la identificación"
+      },
+      "Correo": {
+        "required": "Por favor especifique un correo electrónico",
+        "email": "El valor de correo electrónico debe seguir el formato 'nombre@dominio.com'"
+      },
+      "Id_Tipo": {
+        "required": "Por favor especifique el tipo de tarjeta"
+      }
+    }
+  }
+}

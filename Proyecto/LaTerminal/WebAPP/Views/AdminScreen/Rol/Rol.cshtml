@@ -1,0 +1,53 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Rol/Rol.css">
+<script src="~/Views/AdminScreen/Rol/Rol.js"></script>
+
+
+@Html.CtrlTable(viewName: "RolHandler", id: "tblRoles", title: "Roles",
+                    columnsTitle: "Id,Nombre,Descripcion",
+                    ColumnsDataName: "Id,Nombre,Descripcion", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y creacion de roles
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "RolHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "RolHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="formRoles" class="row" validator="@Url.Content("~/Views/AdminScreen/Rol/Rol.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Id", "Id", CtrlInputTypes.TEXT)
+                    <br>
+                    @Html.CtrlInput("Nombre", "Nombre", CtrlInputTypes.TEXT)
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Descripcion", "Descripcion", CtrlInputTypes.TEXT)
+                    <br>
+                    @{var Permisos = Html.CtrlComboBox<Permiso>("Permisos", "Permisos de rol", "", "permiso", Multiple: "", MultipleSubId: "Id", IdField: "Id", DescriptionField: "Nombre");}
+                    @Permisos
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

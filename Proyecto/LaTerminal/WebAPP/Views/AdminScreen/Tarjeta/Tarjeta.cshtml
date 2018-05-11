@@ -1,0 +1,63 @@
+﻿@using WebAPP.Helpers;
+@using WebAPP.Models.Controls.CtrlComboBoxModel;
+@using Entities.Entities.ArchitectureEntities;
+@using Entities.Entities;
+@using Entities.Classes;
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Views/AdminScreen/Tarjeta/Tarjeta.css">
+<script src="~/Views/AdminScreen/Tarjeta/Tarjeta.js"></script>
+
+@Html.CtrlTable(viewName: "TarjetaHandler", id: "tblTarjetas", title: "Tarjetas",
+                    columnsTitle: "Codigo,Saldo,Fecha Emision,Fecha Vencimiento,Estado",
+                    ColumnsDataName: "Codigo,Saldo,Fecha_Emision,Fecha_Vencimiento,Estado", FunctionName: "BindFields")
+
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        Modificacion y creacion de tarjetas
+    </div>
+
+    <div class="card-header card-subheader">
+        @Html.CtrlButton(viewName: "TarjetaHandler", Id: "btnCreate", Title: "Crear", FunctionName: "form.post", Bootstrap_Classes: "btn-secondary")
+        @Html.CtrlButton(viewName: "TarjetaHandler", Id: "btnUpdate", Title: "Actualizar", FunctionName: "form.put", Bootstrap_Classes: "btn-secondary")
+    </div>
+    <div class="card-body">
+        <form id="formTarjetas" class="row" validator="@Url.Content("~/Views/AdminScreen/Tarjeta/Tarjeta.json")">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Codigo", "Codigo", CtrlInputTypes.TEXT, Disabled: "")
+                    <br>
+                    @{var Usuario = Html.CtrlComboBox<Usuario>("Id_Usuario", "Usuario asignado", "", "usuario", Default: true, IdField: "Identificacion", DescriptionField: "PNombre");}
+                    @Usuario
+                    <br>
+                    @{var Terminal = Html.CtrlComboBox<Terminal>("Id_Terminal", "Terminal a la que pertenece", "", "terminal", Default: false, IdField: "CEDULA_JUR", DescriptionField: "NOMBRE");}
+                    @Terminal
+                    <br>
+                    @{var Tipo = Html.CtrlComboBox<TipoTarjeta>("Id_Tipo", "Tipo de tarjeta", "", "tipotarjeta", Default: false, IdField: "ID", DescriptionField: "NOMBRE");}
+                    @Tipo
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    @Html.CtrlInput("Saldo", "Saldo", CtrlInputTypes.NUMBER)
+                    <br>
+                    @Html.CtrlInput("Fecha_Emision", "Fecha de Emision", CtrlInputTypes.DATE)
+                    <br>
+                    @Html.CtrlInput("Fecha_Vencimiento", "Fecha de Vencimiento", CtrlInputTypes.DATE)
+                    <br>
+                    @{var Estado = Html.CtrlComboBox<ListValue>("Estado", "Estado", "estado_tarjeta");}
+                    @Estado
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

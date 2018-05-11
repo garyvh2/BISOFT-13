@@ -1,0 +1,11 @@
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\bin\Debug\Cliente.exe
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\bin\Debug\Cliente.pdb
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\obj\Debug\Cliente.exe
+C:\Users\Garyy\Source\Workspaces\Laboratorio I\Tecnico\Lab_1\Cliente\obj\Debug\Cliente.pdb
